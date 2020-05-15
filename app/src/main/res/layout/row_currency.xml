@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@color/dark_gray">
+
+        <ImageView
+            android:id="@+id/drag_handle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:src="@drawable/ic_drag_handle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/scrollable_area"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:longClickable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/drag_handle"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/currency_flag"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="16dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/usd" />
+
+            <TextView
+                android:id="@+id/currency_code"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="bottom"
+                android:paddingStart="16dp"
+                android:paddingEnd="8dp"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@id/currency_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/currency_flag"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="USD" />
+
+            <TextView
+                android:id="@+id/currency_name"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="top"
+                android:paddingStart="16dp"
+                android:paddingEnd="8dp"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/currency_flag"
+                app:layout_constraintTop_toBottomOf="@id/currency_code"
+                tools:text="United States Dollar" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</merge>
